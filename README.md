@@ -1,16 +1,39 @@
-# technical_assesment
+# Flutter Wallet App
 
-A new Flutter project.
+A Flutter mobile application that allows users to manage their wallet, view transactions, and perform various related actions.
+
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+  - [Login](#login)
+  - [Wallet and Transaction Data](#wallet-and-transaction-data)
+    - [Filter Transactions](#filter-transactions)
+    - [View Single Transaction](#view-single-transaction)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- User Authentication (Login)
+- Wallet Management
+- Transaction History
+- Transaction Filtering by Type
+- Transaction Details
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter and Dart should be installed. If not, follow the official [installation guide](https://flutter.dev/docs/get-started/install).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/yourusername/flutter-wallet-app.git
+   cd flutter-wallet-app
