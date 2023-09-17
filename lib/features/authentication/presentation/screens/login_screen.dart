@@ -21,6 +21,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -127,9 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   _emailDebouncer.run(() {
                                     emailValidator.validate();
                                   });
-                                  // if (val != null) {
-                                  //   setState(() {});
-                                  // }
+
                                 },
                                 validator: MultiValidator([
                                   RequiredValidator(
@@ -264,7 +263,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // Triggering the login Event
   void _login() {
-    // emailValidator.validate();
 
     if (_formKey.currentState!.validate()) {
       _authBloc

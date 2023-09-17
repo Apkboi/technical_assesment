@@ -7,7 +7,6 @@ import 'package:technical_assesment/common/components/error_widget.dart';
 import 'package:technical_assesment/core/constants/app_colors.dart';
 import 'package:technical_assesment/core/di/injector.dart';
 import 'package:technical_assesment/core/extensions/transaction_extension.dart';
-import 'package:technical_assesment/core/helpers/enums.dart';
 import 'package:technical_assesment/core/utils/app_utils.dart';
 import 'package:technical_assesment/features/wallet/presentation/blocs/wallet/wallet_bloc.dart';
 import 'package:technical_assesment/features/wallet/presentation/components/report_transaction_sheet.dart';
@@ -89,7 +88,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                                             fontWeight: FontWeight.w700),
                                       ),
                                       Text(
-                                        '${state.response.data.createdAt}',
+                                        AppUtils.formatDateTime(state.response.data.createdAt),
                                         style: const TextStyle(color: grey2),
                                       )
                                     ],
@@ -164,14 +163,14 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                                     )),
                                     Card(
                                       color: Colors.green,
-                                      shape: StadiumBorder(),
+                                      shape: const StadiumBorder(),
                                       child: Padding(
-                                        padding: EdgeInsets.symmetric(
+                                        padding: const EdgeInsets.symmetric(
                                           horizontal: 20.0,
                                           vertical: 8,
                                         ),
                                         child: Text(
-                                          '${state.response.data.status}',
+                                          state.response.data.status,
                                         ),
                                       ),
                                     )
@@ -251,6 +250,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                               ],
                             ),
                           ),
+
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: TextButton(
