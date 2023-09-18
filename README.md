@@ -8,6 +8,7 @@ A Flutter mobile application that allows users to manage their wallet, view tran
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Dwnload App](#download-app)
 - [Usage](#usage)
   - [Login](#login)
   - [Wallet and Transaction Data](#wallet-and-transaction-data)
@@ -30,6 +31,8 @@ A Flutter mobile application that allows users to manage their wallet, view tran
 
 - Flutter and Dart should be installed. If not, follow the official [installation guide](https://flutter.dev/docs/get-started/install).
 
+
+
 ### Installation
 
 1. Clone this repository:
@@ -37,3 +40,6 @@ A Flutter mobile application that allows users to manage their wallet, view tran
    ```bash
    git clone https://github.com/yourusername/flutter-wallet-app.git
    cd flutter-wallet-app
+
+### Download app
+- Click link to download app [download app](https://drive.google.com/file/d/15iqN4rQWK2BAeDPTJX0jOb_eK8ZsE5DB/view?usp=sharing).
