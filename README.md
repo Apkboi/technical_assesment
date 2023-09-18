@@ -39,7 +39,7 @@ A Flutter mobile application that allows users to manage their wallet, view tran
 
    ```bash
    git clone https://Apkboi/technical_assesment.git
-   cd flutter-wallet-app
+   cd technical_assesment
 
 ### Download app
 - Click link to download app [download app](https://drive.google.com/file/d/15iqN4rQWK2BAeDPTJX0jOb_eK8ZsE5DB/view?usp=sharing).
