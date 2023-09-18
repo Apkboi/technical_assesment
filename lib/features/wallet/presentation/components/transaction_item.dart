@@ -49,7 +49,7 @@ class _TransactionItemState extends State<TransactionItem> {
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium
-                          ?.copyWith(fontWeight: FontWeight.w700, fontSize: 16),
+                          ?.copyWith(fontWeight: FontWeight.w700, fontSize: 14),
                     ),
                     Text(
                       'Processed',
@@ -72,7 +72,7 @@ class _TransactionItemState extends State<TransactionItem> {
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium
-                        ?.copyWith(fontWeight: FontWeight.w700),
+                        ?.copyWith(fontWeight: FontWeight.w700,fontSize: 14),
                   ),
                   Text(
                     AppUtils.formatDateTime(widget.transaction.createdAt),

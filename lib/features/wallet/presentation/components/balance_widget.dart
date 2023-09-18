@@ -83,7 +83,7 @@ class _BalanceWidgetState extends State<BalanceWidget> {
 
         if (state is FetchWalletFailedState) {
           return SizedBox(
-              height: 100,
+
               child: AppPromptWidget(
                 title: 'Something went wrong..',
                 message: state.error,
@@ -95,7 +95,7 @@ class _BalanceWidgetState extends State<BalanceWidget> {
 
         if (state is FetchWalletLoadingState) {
           return const SizedBox(
-              height: 200,
+              height: 500,
               child: Center(
                 child: CircularLoader(
                   size: 30,
@@ -104,7 +104,7 @@ class _BalanceWidgetState extends State<BalanceWidget> {
         }
 
         return SizedBox(
-            height: 70,
+
             child: AppPromptWidget(
               title: 'Something went wrong..',
               message: 'Try again',

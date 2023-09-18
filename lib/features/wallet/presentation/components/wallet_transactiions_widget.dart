@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:technical_assesment/common/components/circular_loader.dart';
 import 'package:technical_assesment/common/components/error_widget.dart';
 import 'package:technical_assesment/core/constants/app_colors.dart';
@@ -17,6 +18,8 @@ class WalletTransactionsWidget extends StatefulWidget {
 }
 
 class _WalletTransactionsWidgetState extends State<WalletTransactionsWidget> {
+  final refreshController = RefreshController();
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<WalletBloc, WalletState>(
@@ -68,19 +71,31 @@ class _WalletTransactionsWidgetState extends State<WalletTransactionsWidget> {
               ),
               if (state is FetchTransactionsSuccessState)
                 Expanded(
-                    child: ListView.builder(
-                  itemCount: state.response.data.transactions.length,
-                  itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TransactionItem(
-                      transaction: state.response.data.transactions[index],
+                    child: SmartRefresher(
+                  enablePullDown: true,
+                  onRefresh: () {
+                    injector
+                        .get<WalletBloc>()
+                        .add(const FetchTransactionsEvent());
+                    injector.get<WalletBloc>().add(FetchWalletsEvent());
+                    refreshController.refreshCompleted();
+                  },
+                  controller: refreshController,
+                  child: ListView.builder(
+                    itemCount: state.response.data.transactions.length,
+                    itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TransactionItem(
+                        transaction: state.response.data.transactions[index],
+                      ),
                     ),
                   ),
                 )),
               if (state is FetchTransactionsFailedState)
-                SizedBox(
-                    height: 70,
-                    child: AppPromptWidget(
+                Expanded(
+                  child: Center(
+                    child: SizedBox(
+                        child: AppPromptWidget(
                       title: 'Something went wrong..',
                       message: state.error,
                       onTap: () {
@@ -89,14 +104,16 @@ class _WalletTransactionsWidgetState extends State<WalletTransactionsWidget> {
                             .add(const FetchTransactionsEvent());
                       },
                     )),
+                  ),
+                ),
               if (state is FetchTransactionsLoadingState)
-                const SizedBox(
-                    height: 70,
-                    child: Center(
-                      child: CircularLoader(
-                        size: 30,
-                      ),
-                    ))
+                const Expanded(
+                  child: Center(
+                    child: CircularLoader(
+                      size: 30,
+                    ),
+                  ),
+                )
             ],
           ),
         );
