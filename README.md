@@ -38,7 +38,7 @@ A Flutter mobile application that allows users to manage their wallet, view tran
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/flutter-wallet-app.git
+   git clone https://Apkboi/technical_assesment.git
    cd flutter-wallet-app
 
 ### Download app
